@@ -1,0 +1,14 @@
+from colonia import Colonia
+from ambiente import Ambiente
+
+class Simulador:
+    def __init__(self, pasos=5):
+        self.ambiente = Ambiente()
+        self.colonia = Colonia(self.ambiente)
+        self.pasos = pasos
+
+    def run(self):
+        for paso in range(self.pasos):
+            print(f"\n--- Paso {paso + 1} ---")
+            self.colonia.paso()
+            self.colonia.mostrar_estado_general()
