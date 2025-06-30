@@ -1,0 +1,29 @@
+class Ambiente:
+    def __init__(self, filas=10, columnas=10, nivel_nutrientes=50):
+        self.filas = filas
+        self.columnas = columnas
+        self.nutrientes = []
+        for i in range(filas):
+            fila = []
+            for j in range(columnas):
+                fila.append(nivel_nutrientes)
+            self.nutrientes.append(fila)
+
+        self.factor_ambiental = []
+        for i in range(filas):
+            fila = []
+            for j in range(columnas):
+                fila.append(False)
+            self.factor_ambiental.append(fila)
+
+    def obtener_nutrientes(self, x, y):
+        return self.nutrientes[x][y]
+
+    def reducir_nutrientes(self, x, y, cantidad):
+        self.nutrientes[x][y] = max(0, self.nutrientes[x][y] - cantidad)
+
+    def aplicar_ambiente(self):
+        
+
+    def difundir_nutrientes(self):
+        
